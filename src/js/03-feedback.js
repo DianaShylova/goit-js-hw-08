@@ -14,9 +14,10 @@ if (localStorage.getItem("feedback-form-state")) {
     form.email.value = obj.email;
     form.message.value = obj.message;
 }
-form.addEventListener("submit", function() {
-    console.log({email: form.email.value, message: form.message.value});
+form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    console.log({ email: form.email.value, message: form.message.value });
     form.email.value = "";
     form.message.value = "";
     localStorage.clear();
- });
+});
